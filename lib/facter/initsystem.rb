@@ -1,3 +1,7 @@
+# Fact: init_daemon
+#
+# Purpose: Determine the name of initsystem (init daemon)
+
 Facter.add(:initsystem) do
   confine :kernel => %w(Linux)
   setcode do
