@@ -56,4 +56,18 @@ describe 'initsystem' do
       expect(Facter.fact(:initsystem).value).to match('systemd')
     end
   end
+
+  context 'Ubuntu' do
+    it "should return upstart" do
+      os['name'] = 'Ubuntu'
+      os['release']['major'] = '14.04'
+      expect(Facter.fact(:initsystem).value).to match('upstart')
+    end
+
+    it "should return systemd" do
+      os['name'] = 'Ubuntu'
+      os['release']['major'] = '16.04'
+      expect(Facter.fact(:initsystem).value).to match('systemd')
+    end
+  end
 end

@@ -10,6 +10,13 @@ Facter.add(:initsystem) do
       'systemd'
     when 'Debian'
       os['release']['major'].to_i >= 8 ? 'systemd' : 'sysvinit'
+    when 'Ubuntu'
+      case os['release']['major']
+      when '15.04', '15.10', '16.04'
+        'systemd'
+      else
+        'upstart'
+      end
     else
       nil
     end
