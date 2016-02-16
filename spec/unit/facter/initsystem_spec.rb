@@ -6,8 +6,8 @@ describe 'initsystem' do
 
   let(:os) do
     {
-      'name' => 'CentOS',
-      'release' => { 'major' => '6' }
+      'name' => 'dummy',
+      'release' => { 'major' => '0' }
     }
   end
 
@@ -16,12 +16,21 @@ describe 'initsystem' do
     allow(Facter.fact(:os)).to receive(:value).and_return(os)
   end
 
+  context 'Unknown' do
+    it 'should return nil' do
+      expect(Facter.fact(:initsystem).value).to be_nil
+    end
+  end
+
   context 'RHEL' do
     it "should return sysvinit" do
+      os['name'] = 'CentOS'
+      os['release']['major'] = '6'
       expect(Facter.fact(:initsystem).value).to match('sysvinit')
     end
 
     it "should return systemd" do
+      os['name'] = 'CentOS'
       os['release']['major'] = '7'
       expect(Facter.fact(:initsystem).value).to match('systemd')
     end
@@ -30,7 +39,20 @@ describe 'initsystem' do
   context 'Fedora' do
     it "should return systemd" do
       os['name'] = 'Fedora'
-      os['release']['major'] = '22'
+      expect(Facter.fact(:initsystem).value).to match('systemd')
+    end
+  end
+
+  context 'Debian' do
+    it "should return sysvinit" do
+      os['name'] = 'Debian'
+      os['release']['major'] = '7'
+      expect(Facter.fact(:initsystem).value).to match('sysvinit')
+    end
+
+    it "should return systemd" do
+      os['name'] = 'Debian'
+      os['release']['major'] = '8'
       expect(Facter.fact(:initsystem).value).to match('systemd')
     end
   end
