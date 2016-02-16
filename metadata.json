@@ -7,11 +7,6 @@
   "source": "https://github.com/hfm/puppet-init_daemon",
   "project_page": "https://github.com/hfm/puppet-init_daemon",
   "issues_url": "https://github.com/hfm/puppet-init_daemon/issues",
-  "dependencies": [
-    {
-      "name": "puppetlabs-stdlib",
-      "version_requirement": ">= 4.0.0 < 5.0.0"
-    }
-  ],
+  "dependencies": [],
   "data_provider": null
 }
