@@ -1,5 +1,8 @@
 # initsystem
 
+[![Build Status](https://img.shields.io/travis/hfm/puppet-initsystem/master.svg?style=flat-square)](https://travis-ci.org/hfm/puppet-initsystem)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/hfm/initsystem.svg?style=flat-square)](https://forge.puppetlabs.com/hfm/initsystem)
+
 #### Table of Contents
 
 1. [Description](#description)
