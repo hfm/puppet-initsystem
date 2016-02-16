@@ -9,7 +9,11 @@ Facter.add(:initsystem) do
 
     case os['name']
     when /(CentOS|Scientific|RedHat)/
-      os['release']['major'].to_i >= 7 ? 'systemd' : 'sysvinit'
+      case os['release']['major'].to_i
+      when 5 then 'sysvinit'
+      when 6 then 'upstart'
+      when 7 then 'systemd'
+      end
     when 'Fedora'
       'systemd'
     when 'Debian'

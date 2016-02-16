@@ -25,8 +25,14 @@ describe 'initsystem' do
   context 'RHEL' do
     it "should return sysvinit" do
       os['name'] = 'CentOS'
-      os['release']['major'] = '6'
+      os['release']['major'] = '5'
       expect(Facter.fact(:initsystem).value).to match('sysvinit')
+    end
+
+    it "should return upstart" do
+      os['name'] = 'CentOS'
+      os['release']['major'] = '6'
+      expect(Facter.fact(:initsystem).value).to match('upstart')
     end
 
     it "should return systemd" do
