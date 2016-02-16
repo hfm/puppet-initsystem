@@ -9,3 +9,5 @@ group :test, :development do
   gem 'facter', '>= 2.0.1'
   gem 'metadata-json-lint'
 end
+
+gem 'puppet-blacksmith', group: :development
