@@ -1,7 +1,7 @@
-# Class: init_daemon
+# Class: initsystem
 # ===========================
 #
-# Full description of class init_daemon here.
+# Full description of class initsystem here.
 #
 # Authors
 # -------
@@ -13,7 +13,4 @@
 #
 # Copyright 2016 OKUMURA Takahiro.
 #
-class init_daemon {
-
-
-}
+class initsystem {}

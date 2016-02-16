@@ -1,12 +1,12 @@
 {
-  "name": "hfm-init_daemon",
+  "name": "hfm-initsystem",
   "version": "0.1.0",
   "author": "hfm",
-  "summary": "This module aims to init-daemon of OS.",
+  "summary": "This module aims to initsystem of OS.",
   "license": "MIT",
-  "source": "https://github.com/hfm/puppet-init_daemon",
-  "project_page": "https://github.com/hfm/puppet-init_daemon",
-  "issues_url": "https://github.com/hfm/puppet-init_daemon/issues",
+  "source": "https://github.com/hfm/puppet-initsystem",
+  "project_page": "https://github.com/hfm/puppet-initsystem",
+  "issues_url": "https://github.com/hfm/puppet-initsystem/issues",
   "dependencies": [],
   "data_provider": null
 }
