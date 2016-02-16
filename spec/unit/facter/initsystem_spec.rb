@@ -16,12 +16,22 @@ describe 'initsystem' do
     allow(Facter.fact(:os)).to receive(:value).and_return(os)
   end
 
-  it "should return sysvinit on RHEL" do
-    expect(Facter.fact(:initsystem).value).to match('sysvinit')
+  context 'RHEL' do
+    it "should return sysvinit" do
+      expect(Facter.fact(:initsystem).value).to match('sysvinit')
+    end
+
+    it "should return systemd" do
+      os['release']['major'] = '7'
+      expect(Facter.fact(:initsystem).value).to match('systemd')
+    end
   end
 
-  it "should return systemd on RHEL" do
-    os['release']['major'] = '7'
-    expect(Facter.fact(:initsystem).value).to match('systemd')
+  context 'Fedora' do
+    it "should return systemd" do
+      os['name'] = 'Fedora'
+      os['release']['major'] = '22'
+      expect(Facter.fact(:initsystem).value).to match('systemd')
+    end
   end
 end

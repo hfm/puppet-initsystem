@@ -33,6 +33,13 @@
         "6.0",
         "7.0"
       ]
+    },
+    {
+      "operatingsystem": "Fedora",
+      "operatingsystemrelease": [
+        "22",
+        "23"
+      ]
     }
   ]
 }
