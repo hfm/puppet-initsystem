@@ -1,0 +1,19 @@
+language: ruby
+rvm:
+- 2.0.0
+- 2.3.0
+cache: bundler
+bundler_args: "--jobs=3 --retry=3 --without=development"
+before_script: bundle exec puppet --version
+script:
+- bundle exec rake tests
+env:
+- PUPPET_VERSION='~> 3.8.0'
+- PUPPET_VERSION='~> 4.3.0'
+matrix:
+  exclude:
+  - rvm: 2.3.0
+    env: PUPPET_VERSION='~> 3.8.0'
+notifications:
+  slack:
+    secure: CKNzX6dnF/+n1h0Jw9kUH+KUjARYzFyQNPx1t2tywxFAgJCqMDYDzrHrMlTMIGbnShevsEfV2HI3uAmrDo6SivPKRbcDD/zbH1pS+bFBd5HPD4rynJ4VBTOdl8IGTrTRLJoNnRI2HbpdWXYFCLeL795wgMA+A0dASj7GQpjOEVx9KJ8f/PTcWyA2udie6mzERvNGRgDdj65OGIoAWZ4MsFxB2ZCR6R3AwDLctPMzMrDVexrsGwgm8KHkN/Rn1tjEsXnORiE4teitiajsk66srA+rfyM2yPDzjnl90M/L5GsjoCMDf4PvjYwt/34rxS/vbdXRJc/SYEry45cZfnglbI4VADi0NL8JOVa3woOqyEYlaZqkcGgNDBt2L//BcQnM8UJer0Ut5BN7+Bu7g/jskJHA7u3LeP0Uh9nSGamc5mExlpPWekQXfj76aLMZPB8zZvuF8xhVWK7b/rG2PN1vizbbb3UGntdSv3yu8DJVCFHclnVwv/pL57xRDzdF5oRruJ4qt69avYKL0sVB/dyU7+BHzKUN5ufOms6Yq2Czv6my4IygJsoouG2AwaqT8mkwDH2NRo6yaDgR0MpiZ/dEZ76rgMpccSLbNTtOQBot6w0VuCSZYTmU9cMvE5Qb4EkNA5EOy8hMiOQswC1EF9K8MckulyR5PguoIjDkCYCIUQ8=

@@ -15,3 +15,6 @@ task :validate do
     sh "erb -P -x -T '-' #{template} | ruby -c"
   end
 end
+
+desc "Run all tests"
+task :tests => [:lint, :validate, :spec]
