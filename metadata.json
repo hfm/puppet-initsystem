@@ -1,13 +1,15 @@
 {
   "name": "hfm-initsystem",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "hfm",
   "summary": "This module aims to detect initsystem of OS.",
   "license": "MIT",
   "source": "https://github.com/hfm/puppet-initsystem",
   "project_page": "https://github.com/hfm/puppet-initsystem",
   "issues_url": "https://github.com/hfm/puppet-initsystem/issues",
-  "dependencies": [],
+  "dependencies": [
+
+  ],
   "data_provider": null,
   "operatingsystem_support": [
     {
