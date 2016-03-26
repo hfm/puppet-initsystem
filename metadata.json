@@ -7,6 +7,12 @@
   "source": "https://github.com/hfm/puppet-initsystem",
   "project_page": "https://github.com/hfm/puppet-initsystem",
   "issues_url": "https://github.com/hfm/puppet-initsystem/issues",
+  "tags": [
+    "initsystem",
+    "systemd",
+    "upstart",
+    "sysvinit"
+  ],
   "dependencies": [
 
   ],
