@@ -1,6 +1,6 @@
 {
   "name": "hfm-initsystem",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "hfm",
   "summary": "This module aims to detect initsystem of OS.",
   "license": "MIT",
