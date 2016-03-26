@@ -10,9 +10,14 @@ Facter.add(:initsystem) do
     case os['name']
     when /(CentOS|Scientific|RedHat)/
       case os['release']['major'].to_i
-      when 5 then 'sysvinit'
-      when 6 then 'upstart'
-      when 7 then 'systemd'
+      when 5
+        'sysvinit'
+      when 6
+        'upstart'
+      when 7
+        'systemd'
+      else
+        'systemd'
       end
     when 'Fedora'
       'systemd'
