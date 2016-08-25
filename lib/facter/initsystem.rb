@@ -35,6 +35,12 @@ Facter.add(:initsystem) do
       else
         'upstart'
       end
+    when 'SLES'
+      if os['release']['major'].to_i > 11
+        'systemd'
+      else
+        'redhat'
+      end
     else
       nil
     end
