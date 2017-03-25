@@ -76,4 +76,18 @@ describe 'initsystem' do
       expect(Facter.fact(:initsystem).value).to match('systemd')
     end
   end
+
+  context 'SLES' do
+    it "should return upstart" do
+      os['name'] = 'SLES'
+      os['release']['major'] = '11'
+      expect(Facter.fact(:initsystem).value).to match('redhat')
+    end
+
+    it "should return systemd" do
+      os['name'] = 'SLES'
+      os['release']['major'] = '12'
+      expect(Facter.fact(:initsystem).value).to match('systemd')
+    end
+  end
 end
