@@ -29,8 +29,9 @@ Facter.add(:initsystem) do
         'sysvinit'
       end
     when 'Ubuntu'
-      case os['release']['major']
-      when '15.04', '15.10', '16.04'
+      version = os['release']['major']
+      major = version.split('.')[0]
+      if major.to_i >= 15
         'systemd'
       else
         'upstart'
