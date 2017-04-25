@@ -21,3 +21,5 @@ tests/modules/
 
 # Beaker
 log/
+
+.idea/
