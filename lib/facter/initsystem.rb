@@ -22,8 +22,7 @@ Facter.add(:initsystem) do
     when 'Fedora'
       'systemd'
     when 'Debian'
-      case os['release']['major'].to_i
-      when 8
+      if os['release']['major'].to_i > 7
         'systemd'
       else
         'sysvinit'
