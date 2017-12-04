@@ -10,4 +10,7 @@ group :test, :development do
   gem 'metadata-json-lint'
 end
 
-gem 'puppet-blacksmith', group: :development
+group :development do
+  gem 'puppet-blacksmith'
+  gem 'semantic_puppet'
+end
