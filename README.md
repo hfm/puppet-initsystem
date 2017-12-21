@@ -22,7 +22,7 @@ Installing the initsystem module.
 Installing this module, you can use `$::initsystem` in Puppet manifests.
 
 ```puppet
-case $::initsystem {
+case $facts['initsystem'] {
   'sysvinit' {
     # Type your code...
   }
