@@ -8,7 +8,6 @@
 1. [Description](#description)
 1. [Setup - The basics of getting started with init_daemon](#setup)
 1. [Usage - Configuration options and additional functionality](#usage)
-1. [Limitations - OS compatibility, etc.](#limitations)
 
 ## Description
 
