@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe 'initsystem' do
-  before(:each) { Facter.clear }
   after(:each) { Facter.clear }
 
   let(:os) do
@@ -12,6 +11,7 @@ describe 'initsystem' do
   end
 
   before :each do
+    Facter.clear
     allow(Facter.fact(:kernel)).to receive(:value).and_return('Linux')
     allow(Facter.fact(:os)).to receive(:value).and_return(os)
   end
