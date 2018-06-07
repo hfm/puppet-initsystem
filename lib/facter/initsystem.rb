@@ -3,12 +3,12 @@
 # Purpose: Determine the name of initsystem (init daemon)
 
 Facter.add(:initsystem) do
-  confine :kernel => %w(Linux)
+  confine kernel: %w[Linux]
   setcode do
     os = Facter.value(:os)
 
     case os['name']
-    when /(CentOS|Scientific|RedHat)/
+    when %r{(CentOS|Scientific|RedHat)}
       case os['release']['major'].to_i
       when 5
         'sysvinit'

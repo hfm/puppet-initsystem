@@ -7,22 +7,9 @@
   "source": "https://github.com/hfm/puppet-initsystem",
   "project_page": "https://github.com/hfm/puppet-initsystem",
   "issues_url": "https://github.com/hfm/puppet-initsystem/issues",
-  "tags": [
-    "initsystem",
-    "systemd",
-    "upstart",
-    "sysvinit"
-  ],
-  "requirements": [
-    {
-      "name": "puppet",
-      "version_requirement": ">=3.0.0 < 6.0.0"
-    }
-  ],
   "dependencies": [
 
   ],
-  "data_provider": null,
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
@@ -84,5 +71,20 @@
         "12.0"
       ]
     }
-  ]
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">=3.0.0 < 6.0.0"
+    }
+  ],
+  "tags": [
+    "initsystem",
+    "systemd",
+    "upstart",
+    "sysvinit"
+  ],
+  "pdk-version": "1.5.0",
+  "template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-templates.git",
+  "template-ref": "1.5.0-0-gd1b3eca"
 }
