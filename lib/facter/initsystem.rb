@@ -3,7 +3,7 @@
 # Purpose: Determine the name of initsystem (init daemon)
 
 Facter.add(:initsystem) do
-  confine kernel: %w[Linux]
+  confine kernel: ['Linux']
   setcode do
     os = Facter.value(:os)
 
