@@ -8,7 +8,7 @@ Facter.add(:initsystem) do
     os = Facter.value(:os)
 
     case os['name']
-    when %r{(CentOS|Scientific|RedHat)}
+    when %r{(CentOS|Scientific|RedHat|Rocky)}
       case os['release']['major'].to_i
       when 5
         'sysvinit'
